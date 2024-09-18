@@ -1,1 +1,1 @@
-web: gunicorn vr-images-r-us.wsgi
+web: gunicorn vrImages.wsgi
