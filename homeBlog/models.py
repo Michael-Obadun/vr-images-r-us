@@ -19,6 +19,11 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
    
+    class Meta:
+        ordering = ["-created_on"]
+    def __str__(self):
+        return f"{self.title} | written by {self.author}"       
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
@@ -30,6 +35,8 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
     # approved model may have to be deleted
 
-
-
+    class Meta:
+        ordering = ["created_on"]
+    def __str__(self):
+        return f"{self.body} | written by {self.author}"
 
