@@ -7,6 +7,6 @@ class PostList(generic.ListView):
     #model = Post
     queryset = Post.objects.all()
     template_name = "homeBlog/index.html"
-    paginate_by = 6
+    paginate_by = 2
 
 
